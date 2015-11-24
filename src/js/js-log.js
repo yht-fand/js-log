@@ -3,7 +3,7 @@
  * http://js-log.cardone.top/
  *
  *
- * Copyright 2005, 2014 mdyht
+ * Copyright 2005, 2014 cardone
  * Released under the MIT license
  * http://js-log.cardone.top/license
  *
