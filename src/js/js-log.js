@@ -3,7 +3,7 @@
  * http://js-log.cardone.top/
  *
  *
- * Copyright 2005, 2014 cardone
+ * Copyright 2015, 2099 cardone
  * Released under the MIT license
  * http://js-log.cardone.top/license
  *
