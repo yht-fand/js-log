@@ -13,20 +13,28 @@
     var root = (typeof self == 'object' && self.self == self && self) || (typeof global == 'object' && global.global == global && global);
 
     if (typeof define === 'function' && define.amd) {
-        define(['jquery', 'exports'], function ($, exports) {
-            root.jsLog = factory(root, exports, $);
+        define(['exports', 'jquery'], function (exports) {
+            root.jsLog = factory(root, exports, (root.jQuery || root.$));
         });
     } else if (typeof exports !== 'undefined') {
-        try {
-            $ = require('jquery');
-        } catch (e) {
+        if (!(root.jQuery || root.$)) {
+            try {
+                root.$ = require('jquery');
+            } catch (e) {
+            }
         }
 
-        root.jsLog = factory(root, exports, $);
+        if (!root.JSON) {
+            try {
+                root.JSON = require('json2');
+            } catch (e) {
+            }
+        }
+
+        root.jsLog = factory(root, exports, (root.jQuery || root.$));
     } else {
         root.jsLog = factory(root, {}, (root.jQuery || root.$));
     }
-
 }(function (root, jsLog, $) {
     var previousJsLog = root.jsLog;
 
@@ -52,6 +60,22 @@
         "info": 1,
         "warn": 2,
         "error": 4
+    };
+
+    var sendLog = function (data) {
+        var params = {type: "POST", dataType: 'json'};
+
+        if (jsLog.options.emulateJSON) {
+            params.contentType = 'application/json';
+            params.data = JSON.stringify(data);
+        } else {
+            params.contentType = 'application/x-www-form-urlencoded';
+            params.data = data;
+        }
+
+        $.ajax($.extend(params, jsLog.options));
+
+        return true;
     };
 
     $.each(logLevel, function (k, v) {
@@ -85,19 +109,7 @@
                 data.ex = ex;
             }
 
-            var params = {type: "POST", dataType: 'json'};
-
-            if (jsLog.options.emulateJSON) {
-                params.contentType = 'application/json';
-                params.data = JSON.stringify(data);
-            } else {
-                params.contentType = 'application/x-www-form-urlencoded';
-                params.data = data;
-            }
-
-            $.ajax($.extend(params, jsLog.options));
-
-            return true;
+            return sendLog(message, ex);
         };
     });
 
