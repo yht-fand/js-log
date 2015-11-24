@@ -5,3 +5,4 @@ require(['js-log'], function (jsLog) {
 
     jsLog.debug('test');
 });
+
