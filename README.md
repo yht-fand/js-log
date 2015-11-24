@@ -47,6 +47,15 @@ jsLog.debug('test');
 </html>
 ```
 
+## 方法
+名称|参数|说明
+---|---|---
+noConflict|无|避免冲突的方法
+debug|message:日志消息,ex:异常对象，可为空值|发送debug日志
+info|message:日志消息,ex:异常对象，可为空值|发送info日志
+warn|message:日志消息,ex:异常对象，可为空值|发送warn日志
+error|message:日志消息,ex:异常对象，可为空值|发送error日志
+
 ## config 参数
 
 名称|类型|默认值|说明
