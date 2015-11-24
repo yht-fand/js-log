@@ -1,8 +1,11 @@
 # javascript log
 
 > 把日志信息发送到日志服务接口
+
 > 可配置日志服务接口地址
+
 > 可配置本地浏览器日志打印等级
+
 > 可配置发送日志服务接口等级
 
 ## AMD引用方式
@@ -69,3 +72,4 @@ level|string|debug|日志等级:debug、info、warn、error
 sendLevel|string|debug|日志服务接口发送等级:debug、info、warn、error
 url|string||日志服务接口路径
 emulateJSON|boolean|false|true:用 'application/json'发送，false:用'application/x-www-form-urlencoded'发送
+data|object|{token:'test'}|日志服务接口令牌
