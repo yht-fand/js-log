@@ -36,3 +36,12 @@ require(['js-log'], function (jsLog) {
 </body>
 </html>
 ```
+
+## config 参数
+
+名称|类型|默认值|说明
+---|---|---|---
+level|string|debug|日志等级:debug、info、warn、error
+sendLevel|string|debug|日志服务接口发送等级:debug、info、warn、error
+url|string||日志服务接口路径
+emulateJSON|boolean|false|true:用 'application/json'发送，false:用'application/x-www-form-urlencoded'发送
