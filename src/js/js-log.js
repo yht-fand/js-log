@@ -48,7 +48,10 @@
         level: "debug",
         sendLevel: "debug",
         url: "",
-        emulateJSON: false
+        emulateJSON: false,
+        data: {
+            token: 'test'
+        }
     };
 
     jsLog.config = function (options) {
@@ -63,7 +66,7 @@
     };
 
     var sendLog = function (data) {
-        var params = {type: "POST", dataType: 'json'};
+        var params = $.extend({type: "POST", dataType: 'json'}, jsLog.options.data);
 
         if (jsLog.options.emulateJSON) {
             params.contentType = 'application/json';
