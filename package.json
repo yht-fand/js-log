@@ -1,0 +1,13 @@
+{
+  "name": "js-log",
+  "version": "0.0.1",
+  "author": "yao hai tao",
+  "description": "js-log",
+  "dependencies": {
+    "gulp": "latest",
+    "gulp-uglify": "latest",
+    "gulp-concat": "latest",
+    "gulp-rename": "latest",
+    "gulp-clean": "latest"
+  }
+}
