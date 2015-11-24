@@ -1,0 +1,14 @@
+.DS_Store
+*.swp
+*.swo
+*.orig
+.idea
+tmp/
+ext/
+node_modules/
+coverage/
+npm-debug.log
+bower_components/
+reports
+jsdoc
+test/src/

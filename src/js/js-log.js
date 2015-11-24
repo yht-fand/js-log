@@ -28,10 +28,10 @@
     }
 
 }(function (root, jsLog, $) {
-    var previousJsLog = root.JsLog;
+    var previousJsLog = root.jsLog;
 
     jsLog.noConflict = function () {
-        root.JsLog = previousJsLog;
+        root.jsLog = previousJsLog;
 
         return this;
     };
