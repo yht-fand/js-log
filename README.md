@@ -1,9 +1,8 @@
 # javascript log
 
-## AMD 引用方式
+## AMD引用方式
 
 ```
-
 require(['js-log'], function (jsLog) {
     jsLog.config({
         url: '/v1/sysmgr/log/c0002.json'
@@ -11,10 +10,21 @@ require(['js-log'], function (jsLog) {
 
     jsLog.debug('test');
 });
-
 ```
 
-## CMD 引用方式
+## CMD引用方式
+
+```
+var jsLog = require('js-log');
+
+jsLog.config({
+    url: '/v1/sysmgr/log/c0002.json'
+});
+
+jsLog.debug('test');
+```
+
+## 普通引用方式
 
 ```
 <!DOCTYPE html>
