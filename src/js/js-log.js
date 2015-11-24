@@ -69,7 +69,7 @@
         var params = $.extend({
             type: "POST",
             dataType: 'json'
-        }, (typeof jsLog.options.data === 'function' ? jsLog.options.data() : jsLog.options.data));
+        }, ($.isFunction(jsLog.options.data) ? jsLog.options.data() : jsLog.options.data));
 
         if (jsLog.options.emulateJSON) {
             params.contentType = 'application/json';
