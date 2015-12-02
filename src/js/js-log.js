@@ -73,7 +73,7 @@
 
         if (jsLog.options.emulateJSON) {
             params.contentType = 'application/json';
-            params.data = JSON.stringify(data);
+            params.data = root.JSON.stringify(data);
         } else {
             params.contentType = 'application/x-www-form-urlencoded';
             params.data = data;
