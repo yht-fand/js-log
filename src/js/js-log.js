@@ -13,7 +13,7 @@
     var root = (typeof self == 'object' && self.self == self && self) || (typeof global == 'object' && global.global == global && global);
 
     if (typeof define === 'function' && define.amd) {
-        define(['exports', 'jquery'], function (exports) {
+        define(['exports', 'jquery', 'json2'], function (exports) {
             root.jsLog = factory(root, exports, (root.jQuery || root.$));
         });
     } else if (typeof exports !== 'undefined') {
