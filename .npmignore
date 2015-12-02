@@ -6,7 +6,6 @@ src
 tasks
 test
 tmp
-.editorconfig
 .gitignore
 .jshintrc
 bower.json

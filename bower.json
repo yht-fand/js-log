@@ -1,5 +1,5 @@
 {
-  "name": "js-log.mdyht",
+  "name": "js-log.cardone.top",
   "description": "js-log",
   "main": "./dist/**/*",
   "moduleType": [],
@@ -10,7 +10,7 @@
     "yao hai tao"
   ],
   "license": "MIT",
-  "homepage": "js-log.mdyht.com",
+  "homepage": "http://js-log.cardone.top",
   "private": true,
   "ignore": [
     "**/.*",
