@@ -85,6 +85,12 @@
     };
 
     $.each(logLevel, function (k, v) {
+        var isName = 'is' + k.substr(0, 1).toUpperCase() + k.substr(1, k.length) + 'Enabled';
+
+        jsLog[isName] = function () {
+            return v >= logLevel[jsLog.options.level];
+        };
+
         jsLog[k] = function (message, ex) {
             if (logLevel[jsLog.options.level] > v) {
                 return false;

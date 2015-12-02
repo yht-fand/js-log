@@ -13,10 +13,15 @@
 ```
 require(['js-log'], function (jsLog) {
     jsLog.config({
+        level: 'debug',
         url: '/v1/sysmgr/log/c0002.json'
     });
 
     jsLog.debug('test');
+
+    if (jsLog.isDebugEnabled()) {
+        alert('isDebugEnabled === true');
+    }
 });
 ```
 
@@ -26,10 +31,15 @@ require(['js-log'], function (jsLog) {
 var jsLog = require('js-log');
 
 jsLog.config({
+    level: 'debug',
     url: '/v1/sysmgr/log/c0002.json'
 });
 
 jsLog.debug('test');
+
+if (jsLog.isDebugEnabled()) {
+    alert('isDebugEnabled === true');
+}
 ```
 
 ## 普通引用方式
@@ -46,10 +56,15 @@ jsLog.debug('test');
 <script src="../dist/js/js-log.min.js"></script>
 <script>
     jsLog.config({
+        level: 'debug',
         url: '/v1/sysmgr/log/c0002.json'
     });
 
     jsLog.debug('test');
+
+    if (jsLog.isDebugEnabled()) {
+        alert('isDebugEnabled === true');
+    }
 </script>
 </body>
 </html>
@@ -63,6 +78,10 @@ debug|message:日志消息,ex:异常对象，可为空值|发送debug日志
 info|message:日志消息,ex:异常对象，可为空值|发送info日志
 warn|message:日志消息,ex:异常对象，可为空值|发送warn日志
 error|message:日志消息,ex:异常对象，可为空值|发送error日志
+isDebugEnabled|无|是否启用 debug
+isInfoEnabled|无|是否启用 info
+isWarnEnabled|无|是否启用 warn
+isErrorEnabled|无|是否启用 error
 
 ## config 参数
 
